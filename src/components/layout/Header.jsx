@@ -8,6 +8,8 @@ const Header = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+     const { count } = useSelector(store => store.cart)
+        
     const handleClickChangeShowCart = () => {
         if(!token) return navigate("/login")
         dispatch(changeIsShowCart())
@@ -32,7 +34,7 @@ const Header = () => {
                 </Link>
 
                 <button onClick={handleClickChangeShowCart} className='px-3 xs:px-6 text-2xl grid items-center justify-center xs:border-x-[1px] border-gray-300'>
-                <i className='bx bx-cart'></i>
+                <i className='bx bx-cart'>{count}</i>
                 </button>
             </nav>
         </section>

@@ -5,7 +5,8 @@ import Swal from 'sweetalert2'
 
 const initialState = {
     products: [],
-    isShowCart: false
+    isShowCart: false,
+    count:0
 }
 
 const cartSlice = createSlice({
@@ -13,13 +14,14 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         changeIsShowCart: (state) => {
-            state.isShowCart = !state.isShowCart
+            //console.log(state)
+          state.isShowCart = !state.isShowCart;
         },
         setProducts: (state, action) => {
-            const newProducts = action.payload
-            state.products = newProducts
-        }
-    }
+          state.products = action.payload;
+          state.count = action.payload.length;
+        },
+      },
 })
 
 export const {changeIsShowCart, setProducts} = cartSlice.actions

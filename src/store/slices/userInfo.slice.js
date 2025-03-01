@@ -12,11 +12,13 @@ const userInfoSlice = createSlice({
     initialState: JSON.parse(localStorage.getItem("userInfo")) ?? initialState,
     reducers: {
         setUserInfo: (state, action) => {
+            console.log(action)
             const newState = {...state, ...action.payload}
             localStorage.setItem("userInfo", JSON.stringify(newState))
             return newState
         },
         logout: (state) => {
+            console.log(state)
             const newState = {...state, ...initialState}
             localStorage.setItem("userInfo", JSON.stringify(newState))
             return newState

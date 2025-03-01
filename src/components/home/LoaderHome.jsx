@@ -11,4 +11,4 @@ const LoaderHome = () => {
     )
 }
 
-export default LoaderHome
+export default LoaderHome;

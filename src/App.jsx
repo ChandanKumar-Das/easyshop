@@ -34,7 +34,7 @@ function App() {
 
       </Routes>
 
-      {/* <Cart /> */}
+      <Cart />
       
       <Footer />
     </section>

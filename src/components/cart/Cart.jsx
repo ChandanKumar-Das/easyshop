@@ -7,12 +7,11 @@ import Swal from 'sweetalert2'
 const Cart = () => {
     const { isShowCart, products } = useSelector(store => store.cart)
     const {token} = useSelector(store => store.userInfo)
-
+    console.log('.....', isShowCart, products)
     const dispatch = useDispatch()
 
     const handleClickCheckout = () => {
-        dispatch(purchaseCart())
-        
+        dispatch(purchaseCart())    
     }
     
     const totalPrice = products.reduce((acc, curr) => acc + (curr.quantity * curr.product.price), 0)

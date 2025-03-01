@@ -6,6 +6,6 @@ import cart from "./slices/cart.slice";
 export default configureStore({
     reducer: {
         userInfo,
-        cart
+        cart,
     }
 })
